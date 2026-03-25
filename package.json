@@ -1,0 +1,15 @@
+{
+  "name": "ticket-script",
+  "version": "1.0.0",
+  "main": "check.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node check.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}
