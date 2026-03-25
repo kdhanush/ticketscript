@@ -1,6 +1,6 @@
 require("dotenv").config();
 const https = require("https");
-const notifier = require("node-notifier");
+// const notifier = require("node-notifier");
 
 const url = "https://rcbscaleapi.ticketgenie.in/ticket/eventlist/O";
 
@@ -49,12 +49,12 @@ function check() {
                     console.log("🔥 Tickets available!", json.result);
                     console.log(json.result);
                     sendTelegram(`🔥 Tickets Live!\n\n${JSON.stringify(json.result, null, 2)}`);
-                    notifier.notify({
-                        title: "Tickets Available 🎟️",
-                        message: "RCB tickets are live!",
-                        sound: false,
-                        wait: true
-                    });
+                    // notifier.notify({
+                    //     title: "Tickets Available 🎟️",
+                    //     message: "RCB tickets are live!",
+                    //     sound: false,
+                    //     wait: true
+                    // });
                     process.exit();
                 } else {
                     console.log("No tickets yet...")
