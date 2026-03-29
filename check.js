@@ -45,7 +45,7 @@ function check() {
             try {
                 const json = JSON.parse(data);
 
-                if (json.status === "Success" && json.result.length > 1) {
+                if (json.status === "Success" && json.result.length > 0) {
                     console.log("🔥 Tickets available!", json.result);
                     console.log(json.result);
                     sendTelegram(`🔥 Tickets Live!\n\n${JSON.stringify(json.result, null, 2)}`);
