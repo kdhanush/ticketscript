@@ -41,14 +41,14 @@ function check() {
 
         res.on("data", chunk => data += chunk);
 
-        res.on("end", () => {
+        res.on("end", async () =>  {
             try {
                 const json = JSON.parse(data);
 
                 if (json.status === "Success" && json.result.length > 0) {
                     console.log("🔥 Tickets available!", json.result);
                     console.log(json.result);
-                    sendTelegram(`🔥 Tickets Live!\n\n${JSON.stringify(json.result, null, 2)}`);
+                    await sendTelegram(`🔥 Tickets Live!\n\n${JSON.stringify(json.result, null, 2)}`);
                     // notifier.notify({
                     //     title: "Tickets Available 🎟️",
                     //     message: "RCB tickets are live!",
